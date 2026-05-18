@@ -4,7 +4,7 @@ import Card from "../components/Card";
 
 function ShowCreators({ creators }) {
   return (
-    <div>
+    <div className="container">
       <h1>Creatorverse</h1>
 
       <Link to="/new">
@@ -14,15 +14,17 @@ function ShowCreators({ creators }) {
       {creators.length === 0 ? (
         <p>No content creators yet.</p>
       ) : (
-        creators.map((creator) => (
-          <Card
-            key={`${creator.name}-${creator.url}`}
-            name={creator.name}
-            url={creator.url}
-            description={creator.description}
-            imageURL={creator.imageURL}
-          />
-        ))
+        <div className="creators-grid">
+          {creators.map((creator) => (
+            <Card
+              key={`${creator.name}-${creator.url}`}
+              name={creator.name}
+              url={creator.url}
+              description={creator.description}
+              imageURL={creator.imageURL}
+            />
+          ))}
+        </div>
       )}
     </div>
   );

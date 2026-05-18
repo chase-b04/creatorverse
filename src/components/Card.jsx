@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 function Card({ name, url, description, imageURL }) {
   return (
     <div className="card">
-      <img src={imageURL} alt={name} width="200" />
+      <img className="card-media" src={imageURL} alt={name} />
 
       <Link to={`/creator/${name}`}>
         <h2>{name}</h2>

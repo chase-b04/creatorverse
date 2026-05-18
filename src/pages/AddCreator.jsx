@@ -33,29 +33,55 @@ function AddCreator() {
     <div>
       <h1>Add Creator</h1>
 
-      <form onSubmit={addCreator}>
-        <input
-          placeholder="Name"
-          value={name}
-          onChange={(event) => setName(event.target.value)}
-        />
-        <input
-          placeholder="URL"
-          value={url}
-          onChange={(event) => setUrl(event.target.value)}
-        />
-        <textarea
-          placeholder="Description"
-          value={description}
-          onChange={(event) => setDescription(event.target.value)}
-        />
-        <input
-          placeholder="Image URL (optional)"
-          value={imageURL}
-          onChange={(event) => setImageURL(event.target.value)}
-        />
+      <form onSubmit={addCreator} className="edit-form">
+        <div className="form-row">
+          <label htmlFor="add-name">Name</label>
+          <input
+            id="add-name"
+            className="form-input"
+            placeholder="Name"
+            value={name}
+            onChange={(event) => setName(event.target.value)}
+          />
+        </div>
 
-        <button type="submit">Add Creator</button>
+        <div className="form-row">
+          <label htmlFor="add-url">URL</label>
+          <input
+            id="add-url"
+            className="form-input"
+            placeholder="URL"
+            value={url}
+            onChange={(event) => setUrl(event.target.value)}
+          />
+        </div>
+
+        <div className="form-row">
+          <label htmlFor="add-description">Description</label>
+          <textarea
+            id="add-description"
+            className="form-textarea"
+            placeholder="Description"
+            value={description}
+            inputMode="text"
+            onChange={(event) => setDescription(event.target.value)}
+          />
+        </div>
+
+        <div className="form-row">
+          <label htmlFor="add-image">Image URL (optional)</label>
+          <input
+            id="add-image"
+            className="form-input"
+            placeholder="Image URL (optional)"
+            value={imageURL}
+            onChange={(event) => setImageURL(event.target.value)}
+          />
+        </div>
+
+        <div className="form-row form-actions">
+          <button type="submit">Add Creator</button>
+        </div>
       </form>
     </div>
   );

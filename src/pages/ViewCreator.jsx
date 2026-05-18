@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, useNavigate } from "react-router-dom";
 
 import { supabase } from "../client";
 
 function ViewCreator() {
   const { name } = useParams();
+  const navigate = useNavigate();
 
   const [creator, setCreator] = useState(null);
 
@@ -55,9 +56,12 @@ function ViewCreator() {
         <strong>Description:</strong>{" "}
         {creator.description}
       </p>
+      <div style={{ marginTop: 12 }}>
         <Link to={`/edit/${creator.name}`}>
           <button>Edit</button>
         </Link>
+        <button style={{ marginLeft: 8 }} onClick={() => navigate("/")}>Back</button>
+      </div>
     </div>
   );
 }

@@ -74,34 +74,77 @@ function EditCreator() {
     <div>
       <h1>Edit Creator</h1>
 
-      <form onSubmit={updateCreator}>
-        <input
-          placeholder="Name"
-          value={creatorName}
-          onChange={(event) => setCreatorName(event.target.value)}
-        />
-        <input
-          placeholder="URL"
-          value={url}
-          onChange={(event) => setUrl(event.target.value)}
-        />
-        <textarea
-          placeholder="Description"
-          value={description}
-          onChange={(event) => setDescription(event.target.value)}
-        />
-        <input
-          placeholder="Image URL (optional)"
-          value={imageURL}
-          onChange={(event) => setImageURL(event.target.value)}
-        />
+      <form onSubmit={updateCreator} className="edit-form">
+        <div className="form-row">
+          <label htmlFor="name">Name</label>
+          <input
+            id="name"
+            name="name"
+            type="text"
+            className="form-input"
+            placeholder="Name"
+            value={creatorName}
+            onChange={(event) => setCreatorName(event.target.value)}
+          />
+        </div>
 
-        <button type="submit">Save Changes</button>
+        <div className="form-row">
+          <label htmlFor="url">URL</label>
+          <input
+            id="url"
+            name="url"
+            type="text"
+            className="form-input"
+            placeholder="https://example.com"
+            value={url}
+            onChange={(event) => setUrl(event.target.value)}
+          />
+        </div>
+
+        <div className="form-row">
+          <label htmlFor="description">Description</label>
+          <textarea
+            id="description"
+            name="description"
+            className="form-textarea"
+            rows={6}
+            inputMode="text"
+            placeholder="Short description or bio"
+            value={description}
+            onChange={(event) => setDescription(event.target.value)}
+          />
+        </div>
+
+        <div className="form-row">
+          <label htmlFor="imageURL">Image URL (optional)</label>
+          <input
+            id="imageURL"
+            name="imageURL"
+            type="text"
+            className="form-input"
+            placeholder="https://.../photo.jpg"
+            value={imageURL}
+            onChange={(event) => setImageURL(event.target.value)}
+          />
+        </div>
+
+        <div className="form-row form-actions">
+          <button type="submit">Save Changes</button>
+          <button
+            type="button"
+            onClick={() => navigate(`/creator/${name}`)}
+            className="secondary"
+          >
+            Back
+          </button>
+        </div>
       </form>
 
-      <button type="button" onClick={deleteCreator}>
-        Delete Creator
-      </button>
+      <div style={{ marginTop: 12 }}>
+        <button type="button" onClick={deleteCreator} className="danger">
+          Delete Creator
+        </button>
+      </div>
     </div>
   );
 }

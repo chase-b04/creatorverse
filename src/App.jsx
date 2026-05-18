@@ -6,6 +6,7 @@ import ViewCreator from "./pages/ViewCreator";
 import EditCreator from "./pages/EditCreator";
 import AddCreator from "./pages/AddCreator";
 import { supabase } from "./client";
+import "./App.css";
 
 function App() {
   const [creators, setCreators] = useState([]);

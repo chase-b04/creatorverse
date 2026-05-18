@@ -13,3 +13,285 @@ body {
     color-scheme: dark;
   }
 }
+
+:root {
+  --lavender-50: #FBF8FF;
+  --lavender-100: #F3E8FF;
+  --lavender-200: #E9D5FF;
+  --lavender-400: #C084FC;
+  --lavender-600: #7C3AED;
+  --lavender-800: #5B21B6;
+  --accent: #6D28D9;
+  --muted: #6B7280;
+  --card-bg: rgba(255,255,255,0.88);
+}
+
+body {
+  background: linear-gradient(180deg, var(--lavender-50) 0%, #ffffff 60%);
+  color: #111827;
+  font-family: var(--font-sans);
+}
+
+.container {
+  max-width: 1100px;
+  margin: 32px auto;
+  padding: 0 20px;
+}
+
+h1 {
+  font-size: 2rem;
+  margin: 0 0 12px 0;
+  color: var(--lavender-800);
+}
+
+button {
+  background-color: var(--lavender-600);
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(99, 102, 241, 0.12);
+  background-color: var(--lavender-800);
+}
+
+.creators-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 18px;
+  margin-top: 20px;
+}
+
+.card {
+  background: var(--card-bg);
+  border: 1px solid rgba(124,58,237,0.07);
+  border-radius: 12px;
+  padding: 12px;
+  box-shadow: 0 6px 18px rgba(99, 102, 241, 0.06);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transition: transform 160ms ease, box-shadow 160ms ease;
+  position: relative;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 34px rgba(99, 102, 241, 0.12);
+}
+
+.card-media {
+  width: 100%;
+  height: 200px; /* increased to show faces better */
+  object-fit: cover;
+  object-position: 50% 30%; /* favor showing upper part of image (faces) */
+  border-radius: 8px;
+  background: linear-gradient(180deg, var(--lavender-100), #fff);
+}
+
+/* Add clear separators between creator boxes */
+.card {
+  /* keep existing subtle border but add a distinct bottom separator */
+  border-bottom: 1px solid var(--lavender-100);
+  padding-bottom: 14px;
+  margin-bottom: 8px;
+}
+
+.card h2 {
+  margin: 0;
+  color: var(--lavender-800);
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.card a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+/* Visible separators: subtle divider between cards on narrow screens and soft gaps on wide screens */
+@media (max-width: 700px) {
+  .creators-grid {
+    display: block;
+  }
+  .card {
+    margin: 0 0 12px 0;
+    border-left: 4px solid transparent;
+    padding-left: 14px;
+  }
+  .card + .card {
+    border-top: 1px solid var(--lavender-100);
+    padding-top: 12px;
+  }
+}
+
+@media (min-width: 701px) {
+  /* For multi-column grid show a faint vertical separator between items using a drop shadow and inner border */
+  .card {
+    border-left: 1px solid rgba(124,58,237,0.04);
+    /* add a subtle right divider for clearer column separation */
+    border-right: 1px solid rgba(124,58,237,0.03);
+  }
+}
+
+.meta-row {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+/* Form styles for Add/Edit pages */
+.form-row {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+.form-row label {
+  font-weight: 600;
+  color: var(--lavender-800);
+  font-size: 0.95rem;
+}
+
+.form-input,
+.form-textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid rgba(17,24,39,0.08);
+  border-radius: 8px;
+  font-size: 0.95rem;
+  color: #111827;
+  background: white;
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 110px;
+}
+
+/* Hide number input spinners if any inputs accidentally become numeric */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+/* accessibility: focus states */
+.card a:focus, button:focus {
+  outline: 3px solid rgba(124,58,237,0.16);
+  outline-offset: 2px;
+}
+
+/* Form layout and inputs for Add/Edit pages */
+.edit-form {
+  max-width: 720px;
+  margin-top: 12px;
+}
+.form-row {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 14px;
+}
+.form-row label {
+  font-weight: 600;
+  color: var(--lavender-800);
+  font-size: 0.95rem;
+}
+.form-input,
+.form-textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(17,24,39,0.06);
+  background: #fff;
+  font-size: 0.95rem;
+  color: #111827;
+  box-shadow: inset 0 1px 2px rgba(16,24,40,0.02);
+}
+.form-textarea { min-height: 120px; resize: vertical; }
+.form-actions { display: flex; gap: 10px; align-items: center; margin-top: 6px; }
+
+/* secondary button style (back/cancel) */
+button.secondary {
+  background: transparent;
+  color: var(--lavender-800);
+  border: 1px solid rgba(124,58,237,0.12);
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* danger / delete button */
+button.danger, .danger {
+  background-color: #991b1b; /* dark red */
+  color: #ffffff;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-left: 8px; /* push away from edge */
+}
+button.danger:hover, .danger:hover {
+  background-color: #7f1d1d;
+}
+
+/* Form layout */
+.form-row {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+.form-input,
+.form-textarea {
+  padding: 10px 12px;
+  border: 1px solid rgba(17,24,39,0.06);
+  border-radius: 8px;
+  font-size: 0.95rem;
+  background: white;
+}
+
+.form-textarea {
+  min-height: 110px;
+  resize: vertical;
+}
+
+.form-actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+button.secondary {
+  background: transparent;
+  color: var(--accent);
+  border: 1px solid rgba(124,58,237,0.08);
+}
+
+button.danger {
+  background: #fee2e2;
+  color: #7f1d1d;
+  border: 1px solid rgba(127,29,29,0.08);
+}
+
