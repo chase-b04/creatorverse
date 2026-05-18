@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 import Card from "../components/Card";
 
 function ShowCreators({ creators }) {
@@ -5,11 +7,16 @@ function ShowCreators({ creators }) {
     <div>
       <h1>Creatorverse</h1>
 
+      <Link to="/new">
+        <button type="button">Add a Creator</button>
+      </Link>
+
       {creators.length === 0 ? (
         <p>No content creators yet.</p>
       ) : (
         creators.map((creator) => (
           <Card
+            key={`${creator.name}-${creator.url}`}
             name={creator.name}
             url={creator.url}
             description={creator.description}

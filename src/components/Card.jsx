@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 function Card({ name, url, description, imageURL }) {
   return (
     <div className="card">
@@ -10,6 +12,10 @@ function Card({ name, url, description, imageURL }) {
       <p>{description}</p>
 
       <a href={url}>Visit Creator</a>
+
+      <Link to={`/edit/${name}`}>
+        <button type="button">Edit Creator</button>
+      </Link>
     </div>
   );
 }
