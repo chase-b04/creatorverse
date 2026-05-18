@@ -7,13 +7,7 @@ function Card({ name, url, description, imageURL }) {
 
       <p>{description}</p>
 
-      <a
-        href={url}
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Visit Channel
-      </a>
+      <a href={url}>Visit Creator</a>
     </div>
   );
 }

@@ -1,15 +1,37 @@
 import { useRoutes, Link } from "react-router-dom";
+import { useEffect, useState } from "react";
 
 import ShowCreators from "./pages/ShowCreators";
 import ViewCreator from "./pages/ViewCreator";
 import EditCreator from "./pages/EditCreator";
 import AddCreator from "./pages/AddCreator";
+import { supabase } from "./client";
 
 function App() {
+  const [creators, setCreators] = useState([]);
+
+  useEffect(() => {
+    const fetchCreators = async () => {
+      const { data, error } = await supabase
+        .from("creators")
+        .select("*");
+
+      if (error) {
+        console.error(error);
+      } else {
+        setCreators(data);
+      }
+    };
+    
+    fetchCreators();
+  }, []);
+
   const routes = useRoutes([
     {
       path: "/",
-      element: <ShowCreators />,
+      element: (
+        <ShowCreators creators={creators} />
+      ),
     },
     {
       path: "/creator/:id",
@@ -25,19 +47,7 @@ function App() {
     },
   ]);
 
-  return (
-    <div>
-      <nav>
-        <Link to="/">Home</Link>
-        {" | "}
-        <Link to="/new">Add Creator</Link>
-      </nav>
-
-      <hr />
-
-      {routes}
-    </div>
-  );
+  return <div>{routes}</div>;
 }
 
 export default App;
