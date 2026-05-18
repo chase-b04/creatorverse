@@ -87,16 +87,14 @@ button:hover {
 
 .card-media {
   width: 100%;
-  height: 200px; /* increased to show faces better */
+  height: 200px;
   object-fit: cover;
-  object-position: 50% 30%; /* favor showing upper part of image (faces) */
+  object-position: 50% 30%;
   border-radius: 8px;
   background: linear-gradient(180deg, var(--lavender-100), #fff);
 }
 
-/* Add clear separators between creator boxes */
 .card {
-  /* keep existing subtle border but add a distinct bottom separator */
   border-bottom: 1px solid var(--lavender-100);
   padding-bottom: 14px;
   margin-bottom: 8px;
@@ -120,7 +118,6 @@ button:hover {
   text-decoration: none;
 }
 
-/* Visible separators: subtle divider between cards on narrow screens and soft gaps on wide screens */
 @media (max-width: 700px) {
   .creators-grid {
     display: block;
@@ -137,10 +134,8 @@ button:hover {
 }
 
 @media (min-width: 701px) {
-  /* For multi-column grid show a faint vertical separator between items using a drop shadow and inner border */
   .card {
     border-left: 1px solid rgba(124,58,237,0.04);
-    /* add a subtle right divider for clearer column separation */
     border-right: 1px solid rgba(124,58,237,0.03);
   }
 }
@@ -155,7 +150,6 @@ button:hover {
   color: var(--muted);
 }
 
-/* Form styles for Add/Edit pages */
 .form-row {
   display: flex;
   flex-direction: column;
@@ -201,7 +195,6 @@ input[type="number"] {
   outline-offset: 2px;
 }
 
-/* Form layout and inputs for Add/Edit pages */
 .edit-form {
   max-width: 720px;
   margin-top: 12px;
@@ -241,21 +234,19 @@ button.secondary {
   cursor: pointer;
 }
 
-/* danger / delete button */
 button.danger, .danger {
-  background-color: #991b1b; /* dark red */
+  background-color: #991b1b;
   color: #ffffff;
   border: none;
   padding: 8px 12px;
   border-radius: 8px;
   cursor: pointer;
-  margin-left: 8px; /* push away from edge */
+  margin-left: 8px;
 }
 button.danger:hover, .danger:hover {
   background-color: #7f1d1d;
 }
 
-/* Form layout */
 .form-row {
   display: flex;
   flex-direction: column;
@@ -269,7 +260,7 @@ button.danger:hover, .danger:hover {
   border: 1px solid rgba(17,24,39,0.06);
   border-radius: 8px;
   font-size: 0.95rem;
-  background: white;
+  background: #ffffff;
 }
 
 .form-textarea {
@@ -290,8 +281,8 @@ button.secondary {
 }
 
 button.danger {
-  background: #fee2e2;
-  color: #7f1d1d;
+  background: #7f1d1d;
+  color: #ffffff;
   border: 1px solid rgba(127,29,29,0.08);
 }
 
