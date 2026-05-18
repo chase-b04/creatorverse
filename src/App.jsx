@@ -34,11 +34,11 @@ function App() {
       ),
     },
     {
-      path: "/creator/:id",
+      path: "/creator/:name",
       element: <ViewCreator />,
     },
     {
-      path: "/edit/:id",
+      path: "/edit/:name",
       element: <EditCreator />,
     },
     {

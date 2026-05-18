@@ -10,7 +10,6 @@ function ShowCreators({ creators }) {
       ) : (
         creators.map((creator) => (
           <Card
-            key={creator.id}
             name={creator.name}
             url={creator.url}
             description={creator.description}

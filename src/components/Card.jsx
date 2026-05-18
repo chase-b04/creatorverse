@@ -3,7 +3,9 @@ function Card({ name, url, description, imageURL }) {
     <div className="card">
       <img src={imageURL} alt={name} width="200" />
 
-      <h2>{name}</h2>
+      <Link to={`/creator/${name}`}>
+        <h2>{name}</h2>
+      </Link>
 
       <p>{description}</p>
 
