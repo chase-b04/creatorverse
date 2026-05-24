@@ -80,6 +80,7 @@ function AddCreator() {
         </div>
 
         <div className="form-row form-actions">
+          <button type="button" className="secondary" onClick={() => navigate("/")}>Back</button>
           <button type="submit">Add Creator</button>
         </div>
       </form>

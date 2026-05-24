@@ -5,16 +5,14 @@ function Card({ name, url, description, imageURL }) {
     <div className="card">
       <img className="card-media" src={imageURL} alt={name} />
 
-      <Link to={`/creator/${name}`}>
-        <h2>{name}</h2>
-      </Link>
+      <h2>{name}</h2>
 
       <p>{description}</p>
 
       <a href={url}>Visit Creator</a>
 
-      <Link to={`/edit/${name}`}>
-        <button type="button">Edit Creator</button>
+      <Link to={`/creator/${name}`}>
+        <button type="button">View Creator</button>
       </Link>
     </div>
   );

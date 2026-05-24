@@ -285,4 +285,6 @@ button.danger {
   color: #ffffff;
   border: 1px solid rgba(127,29,29,0.08);
 }
+/* Ensure danger buttons have a small left offset when placed near edges */
+.danger, button.danger { margin-left: 8px; }
 

@@ -129,7 +129,6 @@ function EditCreator() {
         </div>
 
         <div className="form-row form-actions">
-          <button type="submit">Save Changes</button>
           <button
             type="button"
             onClick={() => navigate(`/creator/${name}`)}
@@ -137,11 +136,17 @@ function EditCreator() {
           >
             Back
           </button>
+          <button type="submit">Save Changes</button>
         </div>
       </form>
 
       <div style={{ marginTop: 12 }}>
-        <button type="button" onClick={deleteCreator} className="danger">
+        <button
+          type="button"
+          onClick={deleteCreator}
+          className="danger"
+          style={{ marginLeft: 8 }}
+        >
           Delete Creator
         </button>
       </div>
