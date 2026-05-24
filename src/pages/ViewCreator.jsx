@@ -28,7 +28,11 @@ function ViewCreator() {
   }, [name]);
 
   if (!creator) {
-    return <h1>Loading!!!</h1>;
+    return (
+      <div className="loading-screen">
+        <h1>Loading!!!</h1>
+      </div>
+    );
   }
 
   return (

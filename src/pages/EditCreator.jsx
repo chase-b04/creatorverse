@@ -66,8 +66,7 @@ function EditCreator() {
       return;
     }
 
-    navigate("/");
-    window.location.reload();
+    navigate("/", { replace: true });
   };
 
   return (

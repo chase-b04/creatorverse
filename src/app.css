@@ -150,6 +150,14 @@ button:hover {
   color: var(--muted);
 }
 
+.loading-screen {
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
 .form-row {
   display: flex;
   flex-direction: column;
